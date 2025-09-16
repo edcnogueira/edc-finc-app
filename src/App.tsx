@@ -1,11 +1,10 @@
-import "./App.css";
-
 function App() {
-    return (
-    <main>
-      <h1>Welcome to Tauri + React</h1>
-    </main>
-  );
+	return (
+		<main>
+			<h1>Tauri + Edc Finc App</h1>
+			<p>This is a app for Personal Finance</p>
+		</main>
+	);
 }
 
 export default App;
