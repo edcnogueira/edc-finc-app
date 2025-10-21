@@ -1,1 +1,59 @@
 @import "tailwindcss";
+
+:root {
+	--header-height: 56px; /* 14 * 4px = h-14 */
+	--sidebar-width: 11rem; /* w-44 */
+}
+
+@layer components {
+	header {
+		@apply px-4 bg-blue-600 text-white fixed w-full z-50;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: var(--header-height);
+		display: flex;
+		align-items: center;
+
+		h1 {
+			@apply text-2xl font-bold;
+		}
+	}
+
+	/* Fixed sidebar below the header */
+	aside {
+		@apply w-44 border-gray-200 border-r bg-gray-100;
+		position: fixed;
+		top: var(--header-height);
+		left: 0;
+		height: calc(100vh - var(--header-height));
+		overflow-y: auto;
+
+		nav {
+			@apply space-y-2 p-4;
+		}
+
+		ul {
+			@apply space-y-1;
+
+			li {
+				a {
+					@apply block rounded px-3 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900;
+				}
+			}
+		}
+	}
+
+	/* Only the main content scrolls */
+	main {
+		margin-top: var(--header-height);
+		margin-left: var(--sidebar-width);
+		height: calc(100vh - var(--header-height));
+		overflow: auto;
+	}
+}
+
+:root {
+	--header-height: 56px;
+	--sidebar-width: 11rem;
+}
