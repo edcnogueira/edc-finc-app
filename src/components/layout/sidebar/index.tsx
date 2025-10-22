@@ -7,7 +7,7 @@ export function Sidebar() {
 				<ul>
 					<li>
 						<Link
-							to="/home"
+							to="/"
 							activeProps={{
 								className: "bg-gray-200 font-semibold",
 							}}
